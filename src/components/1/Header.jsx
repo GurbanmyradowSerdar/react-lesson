@@ -1,8 +1,8 @@
-import React from "react";
+import { twMerge as tw } from "tailwind-merge";
 
 const Header = ({ title, className }) => {
   return (
-    <header className={`${className} bg-black text-white`}>
+    <header className={tw(`bg-black text-white`, className)}>
       {title ? title : "default title"}
     </header>
   );
