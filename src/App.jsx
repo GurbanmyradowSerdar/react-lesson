@@ -1,66 +1,25 @@
-import { useState, useCallback } from "react";
-import InputComponent from "./components/8/memo-usage/InputComponent";
-import AddInputComponent from "./components/8/memo-usage/AddInputComponent";
-import WrapperComponent from "./components/8/useCallback-usage/WrapperComponent";
-import ChildrenPropComponent from "./components/8/useCallback-usage/ChildrenPropComponent";
+import { useState } from "react";
+import { stringArray } from "./components/9/data";
+
+let index = 0;
 
 function App() {
-  // const [isClicked, setIsClicked] = useState(false);
-  // const [items, setItems] = useState([
-  //   {
-  //     id: 0,
-  //     value: "",
-  //   },
-  //   {
-  //     id: 1,
-  //     value: "",
-  //   },
-  //   {
-  //     id: 2,
-  //     value: "",
-  //   },
-  // ]);
+  const [name, setName] = useState(false);
 
-  // const handleChangeValue = useCallback(
-  //   (id, value) =>
-  //     setItems((prev) =>
-  //       prev.map((item) => {
-  //         if (item.id === id) {
-  //           item.value = value;
-  //         }
-
-  //         return item;
-  //       })
-  //     ),
-  //   []
-  // );
-
-  // const handleClickAdd = (value) => {
-  //   setItems((prev) => [...prev, { id: prev[prev.length - 1].id + 1, value }]);
-  // };
+  function handleClick() {
+    index = index + 1;
+    console.log(index);
+  }
+  console.log("rendered");
 
   return (
     <div className="bg-blue-50 min-h-screen flex flex-col items-center justify-center gap-10">
-      {/* <AddInputComponent handleClickAdd={handleClickAdd} />
-      <button className="text-6xl" onClick={() => setIsClicked(!isClicked)}>
-        click me
+      <button className="text-2xl" onClick={handleClick}>
+        click to update
       </button>
-
-      <div className="grid grid-cols-6 gap-5">
-        {items.map((item, i) => (
-          <InputComponent
-            {...item}
-            key={i}
-            handleChangeValue={handleChangeValue}
-          />
-        ))}
-      </div> */}
-
-      <WrapperComponent>
-        <ChildrenPropComponent />
-        {/* it wont re render children while wrapper */}
-        component re-rendered
-      </WrapperComponent>
+      <button onClick={() => setName(!name)}>update state</button>
+      {<p>{stringArray[index]}</p>}
+      {index}
     </div>
   );
 }
