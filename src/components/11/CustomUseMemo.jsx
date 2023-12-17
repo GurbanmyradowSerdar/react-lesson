@@ -14,20 +14,16 @@ export default function CustomUseMemo() {
     []
   );
 
-  const searchOptions = useMemo(
-    () => ({ matchMode: "whole-word", text: text }),
-    [text]
-  );
+  // const searchOptions = useMemo(
+  //   () => ({ matchMode: "whole-word", text: text }),
+  //   [text]
+  // );
 
   const children = useMemo(
     () =>
       filteredData.map((item, i) => {
-        return (
-          <div key={i}>
-            {item.email}
-            {item.id}
-          </div>
-        );
+        if (i === 0) console.log("item rendered");
+        return <ListItem data={item} key={i} />;
       }),
     []
   );
@@ -39,6 +35,15 @@ export default function CustomUseMemo() {
       {/* <List data={filteredData} /> */}
       {children}
       <button onClick={() => setIsActive(!isActive)}>click me</button>
+    </div>
+  );
+}
+
+function ListItem({ data }) {
+  return (
+    <div>
+      {data.email}
+      {data.id}
     </div>
   );
 }
