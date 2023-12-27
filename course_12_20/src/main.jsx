@@ -5,8 +5,6 @@ import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <div className="h-screen flex items-center justify-center text-4xl">
-      <App />
-    </div>
+    <App />
   </React.StrictMode>
 );
