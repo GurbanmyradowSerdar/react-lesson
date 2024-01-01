@@ -1,11 +1,8 @@
-import MyUseEffect from "./components/15";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./components/16/router";
 
 function App() {
-  return (
-    <div className="flex space-x-20 items-center relative">
-      <MyUseEffect />
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
