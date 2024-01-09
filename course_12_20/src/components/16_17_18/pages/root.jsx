@@ -9,7 +9,6 @@ const navigation = [
 ];
 
 export default function RootPage() {
-  console.log("rendered");
   return (
     <div className="bg-white">
       <header className="relative inset-x-0 top-0 z-50">

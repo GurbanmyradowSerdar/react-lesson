@@ -5,6 +5,7 @@ import ErrorPage from "./pages/errors/ErrorPage";
 import CatalogPage from "./pages/catalog";
 import FormPage from "./pages/form";
 import HomePage from "./pages";
+import { getContactById } from "./loader";
 
 const router = createBrowserRouter([
   {
